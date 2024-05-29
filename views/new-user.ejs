@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/navbar') %>
+      <div class="app">
+        <form method="post" action="/new" style="display: flex; flex-direction: column">
+          <% if (error) { %>
+          <span style="color: red"><%- error %></span>
+          <% } %>
+          <label for="user">enter name</label>
+          <input type="text" id="user" name="user" />
+          <button type="submit">add new user</button>
+        </form>
+      </div>
+      <%- include("partials/footer") %>
+    </div>
+  </body>
+</html>

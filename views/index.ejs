@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('partials/navbar') %>
+
+      <div class="app">
+        <h1>HomePage</h1>
+        <a href="/new">Add new user</a>
+        <ul>
+          <% users.forEach(user => { %>
+          <li><%= user.name %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <%- include("partials/footer") %>
+    </div>
+  </body>
+</html>
