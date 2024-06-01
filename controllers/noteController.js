@@ -6,7 +6,7 @@ const locals = {
 };
 
 const noteController = async (req, res) => {
-  res.status(200).render("new-user", { ...locals });
+  res.status(200).render("new-note", { ...locals });
 };
 const addNote = async (req, res) => {
   try {

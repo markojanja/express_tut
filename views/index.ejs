@@ -12,13 +12,13 @@
           <h2>#staypositive, leave nice coding message</h2>
         </div>
 
-        <a class="btn btn-info" href="/new">Add new user</a>
+        <a class="btn btn-info" href="/new">Add note</a>
         <ul>
-          <% users.forEach(user => { %>
+          <% notes.forEach(note => { %>
           <li>
-            <p><%= user.note %></p>
-            <span>posted by: <%- user.author %> </span>
-            <span>date <%- new Date(user.createdAt).toLocaleDateString('en-GB') %> </span>
+            <p><%= note.note %></p>
+            <span>posted by: <%- note.author %> </span>
+            <span>date <%- new Date(note.createdAt).toLocaleDateString('en-GB') %> </span>
           </li>
           <% }) %>
         </ul>

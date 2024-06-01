@@ -1,8 +1,8 @@
 import Note from "../models/users.js";
 
 const rootController = async (req, res) => {
-  const users = await Note.find({});
-  res.status(200).render("index", { title: "Homepage", users: users });
+  const notes = await Note.find({});
+  res.status(200).render("index", { title: "Homepage", notes: notes });
 };
 
 export default rootController;
