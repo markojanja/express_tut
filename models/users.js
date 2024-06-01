@@ -1,9 +1,19 @@
-const users = [
-  { id: 1, name: "Alice" },
-  { id: 2, name: "Bob" },
-  { id: 3, name: "Charlie" },
-  { id: 4, name: "David" },
-  { id: 5, name: "Eva" },
-];
+import mongoose from "mongoose";
 
-export default users;
+const notesSchema = mongoose.Schema(
+  {
+    author: {
+      type: String,
+      required: true,
+    },
+    note: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export default mongoose.model("Note", notesSchema);

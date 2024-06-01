@@ -9,11 +9,13 @@
       <div class="app">
         <form method="post" action="/new" style="display: flex; flex-direction: column">
           <% if (error) { %>
-          <span style="color: red"><%- error %></span>
+          <span class="toast"><%- error %></span>
           <% } %>
-          <label for="user">enter name</label>
-          <input type="text" id="user" name="user" />
-          <button type="submit">add new user</button>
+          <label for="author">enter name</label>
+          <input type="text" id="author" name="author" autocomplete="off" />
+          <label for="note">enter note</label>
+          <textarea rows="5" type="text" id="note" name="note"></textarea>
+          <button class="btn btn-success" type="submit">Add note</button>
         </form>
       </div>
       <%- include("partials/footer") %>

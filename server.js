@@ -1,9 +1,11 @@
 import experess from "express";
-import indexRoute from "./routes/root.js";
-import newUser from "./routes/newUser.js";
-import errorHandler from "./middleware/errorHandler.js";
 import path from "path";
 import url from "url";
+import indexRoute from "./routes/root.js";
+import newNote from "./routes/newNote.js";
+import connectDB from "./config/config.js";
+
+connectDB();
 
 const app = experess();
 
@@ -16,18 +18,16 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(experess.urlencoded({ extended: false }));
-app.use(experess.json());
 
 app.use(experess.static(path.join(__dirname, "public")));
 
 app.use("/", indexRoute);
-app.use("/new", newUser);
+app.use("/new", newNote);
 
 app.all("*", (req, res) => {
   res.status(404);
   res.render("404", { title: "not found" });
 });
-app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);

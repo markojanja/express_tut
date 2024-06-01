@@ -8,11 +8,18 @@
       <%- include('partials/navbar') %>
 
       <div class="app">
-        <h1>HomePage</h1>
-        <a href="/new">Add new user</a>
+        <div class="heading">
+          <h2>#staypositive, leave nice coding message</h2>
+        </div>
+
+        <a class="btn btn-info" href="/new">Add new user</a>
         <ul>
           <% users.forEach(user => { %>
-          <li><%= user.name %></li>
+          <li>
+            <p><%= user.note %></p>
+            <span>posted by: <%- user.author %> </span>
+            <span>date <%- new Date(user.createdAt).toLocaleDateString('en-GB') %> </span>
+          </li>
           <% }) %>
         </ul>
       </div>
